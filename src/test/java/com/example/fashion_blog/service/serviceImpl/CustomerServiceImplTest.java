@@ -213,10 +213,10 @@ class CustomerServiceImplTest {
     }
 
 
-    @Test
-    void testShowPostByCategory() {
-        assertNull(customerServiceImpl.showPostByCategory(123L));
-    }
+//    @Test
+//    void testShowPostByCategory() {
+//        assertNull(customerServiceImpl.showPostByCategory(123L));
+//    }
 
 
     @Test
