@@ -1,0 +1,39 @@
+#version: '3.1'
+#services:
+#  app:
+#    container_name: springboot-postgresql
+#    image: springboot-postgresql
+#    build: .
+#    restart: always
+#    ports:
+#      - "8081:8080"
+#    depends_on:
+#      - postgresql
+#  postgresql:
+#    image: postgres
+#    restart: always
+#    ports:
+#      - "5431:5432"
+#    environment:
+#      POSTGRES_PASSWORD: 244629933
+#      POSTGRES_USER: postgres
+#      POSTGRES_DB: FashionBlog
+
+version: "3.7"
+services:
+  server:
+    build: .
+    restart: always
+    ports:
+      - 8081:8080
+    depends_on:
+      - mysqldb
+  mysqldb:
+    platform: linux/x86_64
+    image: "mysql:8.0.29"
+    restart: always
+    ports:
+      - 3307:3306
+    environment:
+      MYSQL_DATABASE: fashiondb
+      MYSQL_ROOT_PASSWORD: root
